@@ -1,0 +1,35 @@
+.item-link {
+  &:hover,
+  &:focus {
+    .item-content,
+    .item-note,
+    .#{$lv-icon-font-name} {
+      color: $lv-item-link-hover-color;
+    }
+  }
+
+  &.active {
+    &:hover,
+    &:focus {
+      .item-content {
+        color: $lv-item-color;
+      }
+
+      .item-note {
+        color: $lv-item-note-color;
+      }
+
+      .#{$lv-icon-font-name} {
+        color: $lv-item-note-icon-color;
+      }
+    }
+  }
+
+  .item-content {
+    cursor: pointer;
+
+    > .item-note {
+      flex-direction: row;
+    }
+  }
+}

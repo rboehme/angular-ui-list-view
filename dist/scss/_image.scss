@@ -1,0 +1,46 @@
+.item-image {
+  @include border-image(linear-gradient(left, transparent ($lv-item-height-lg + $lv-item-padding), $lv-item-divider-border-color ($lv-item-height-lg + $lv-item-padding), $lv-item-divider-border-color 100%) 1 stretch);
+
+  .item-content {
+    padding-left: ($lv-item-padding * 2);
+  }
+
+  img:first-of-type {
+    position: relative;
+    left: -$lv-item-padding;
+    display: block;
+    width: ($lv-item-height-lg - $lv-item-padding);
+    height: ($lv-item-height-lg - $lv-item-padding);
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-repeat: no-repeat;
+    background-size: ($lv-item-height-lg - $lv-item-padding);
+    border-radius: 100%;
+  }
+
+  .item-note {
+    .#{$lv-icon-font-name} {
+      align-self: flex-end;
+    }
+  }
+
+  &.item-reverse {
+    @include border-image(linear-gradient(right, transparent ($lv-item-height-lg + $lv-item-padding), $lv-item-divider-border-color ($lv-item-height-lg + $lv-item-padding), $lv-item-divider-border-color 100%) 1 stretch);
+
+    .item-content {
+      padding-right: ($lv-item-padding * 2);
+      padding-left: $lv-item-padding;
+    }
+
+    img:first-of-type {
+      right: -$lv-item-padding;
+      left: auto;
+    }
+
+    .item-note {
+      .#{$lv-icon-font-name} {
+        align-self: flex-start;
+      }
+    }
+  }
+}

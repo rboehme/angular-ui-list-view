@@ -1,0 +1,31 @@
+.item-radio {
+  &.active,
+  &.active + .item {
+    @include border-image(linear-gradient(left, transparent $lv-item-padding, $lv-item-divider-border-color $lv-item-padding, $lv-item-divider-border-color 100%) 1 stretch);
+
+    &.item-reverse {
+      @include border-image(linear-gradient(right, transparent $lv-item-padding, $lv-item-divider-border-color $lv-item-padding, $lv-item-divider-border-color 100%) 1 stretch);
+    }
+  }
+
+  .item-content {
+    @include user-select(none);
+
+    > div:first-of-type {
+      position: relative;
+      width: 100%;
+    }
+
+    > .item-note {
+      width: auto;
+
+      .#{$lv-icon-font-name} {
+        color: $lv-item-radio-active-color;
+      }
+    }
+  }
+
+  .radio {
+    display: none;
+  }
+}

@@ -1,0 +1,38 @@
+.item-icon {
+  @include border-image(linear-gradient(left, transparent ($lv-item-padding * 4), $lv-item-divider-border-color ($lv-item-padding * 4), $lv-item-divider-border-color 100%) 1 stretch);
+
+  .item-content {
+    padding-left: ($lv-item-padding * 4);
+  }
+
+  .item-content > .#{$lv-icon-font-name}:first-of-type {
+    position: absolute;
+    top: 50%;
+    left: $lv-item-padding;
+    font-size: 150%;
+    color: $lv-item-icon-color;
+    border-radius: 100%;
+
+    @include translate(0, -50%);
+  }
+
+  .#{$lv-icon-font-name}:first-of-type + span,
+  .#{$lv-icon-font-name}:first-of-type + label,
+  .#{$lv-icon-font-name}:first-of-type + div {
+    position: relative;
+  }
+
+  &.item-reverse {
+    @include border-image(linear-gradient(right, transparent ($lv-item-padding * 4), $lv-item-divider-border-color ($lv-item-padding * 4), $lv-item-divider-border-color 100%) 1 stretch);
+
+    .item-content {
+      padding-right: ($lv-item-padding * 4);
+      padding-left: $lv-item-padding;
+    }
+
+    .item-content > .#{$lv-icon-font-name}:first-of-type {
+      right: $lv-item-padding;
+      left: auto;
+    }
+  }
+}

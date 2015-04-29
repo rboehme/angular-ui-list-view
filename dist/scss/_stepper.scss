@@ -1,0 +1,49 @@
+.item-stepper {
+  @extend .item-input;
+
+  .input {
+    width: calc(100% - 60px);
+  }
+
+  .stepper {
+    align-items: center;
+    flex-direction: row;
+
+    > .btn {
+      padding: 0 ($padding-base-horizontal / 2);
+      font-size: 90%;
+      font-weight: normal;
+      color: $brand-primary;
+      background-color: transparent;
+      border-color: $btn-primary-border;
+
+      @include box-shadow(none);
+      @include text-overflow();
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: rgba($btn-primary-bg, .2);
+      }
+    }
+  }
+
+  &.item-disabled {
+    .stepper {
+      > .btn {
+        color: rgba($brand-primary, .5);
+        background-color: transparent;
+        border-color: rgba($btn-primary-border, .25);
+        cursor: not-allowed;
+        pointer-events: none;
+      }
+    }
+  }
+
+  &.item-reverse {
+    .input {
+      margin-left: 60px;
+      text-align: right;
+    }
+  }
+}

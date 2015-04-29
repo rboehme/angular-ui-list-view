@@ -1,0 +1,15 @@
+# Numerous always-ignore extensions
+*.iml
+*.log
+*~
+
+# OS or Editor folders
+.cache
+.sass-cache
+.idea
+.DS_Store
+Thumbs.db
+
+# Folders to ignore
+bower_components
+node_modules

@@ -1,0 +1,33 @@
+$lv-icon-font-name:               "glyphicon" !default;
+
+$lv-list-bg:                      #fff !default;
+
+$lv-group-divider-height:         30px !default;
+$lv-group-divider-color:          #8f8f94 !default;
+$lv-group-divider-bg:             #efeff4 !default;
+
+$lv-item-height-sm:               40px !default;
+$lv-item-height-lg:               60px !default;
+
+$lv-item-padding:                 ($lv-item-height-sm / 4) !default;
+$lv-item-color:                   $text-color !default;
+$lv-item-alt-color:               #808080 !default;
+$lv-item-label-color:             #a0a0a5 !default;
+$lv-item-disabled-color:          #c7c7cc !default;
+$lv-item-bg:                      #fff !default;
+$lv-item-active-bg:               #d9d9d9 !default;
+$lv-item-divider-border-color:    #dadade !default;
+$lv-item-icon-color:              $brand-primary !default;
+$lv-item-note-color:              $lv-item-alt-color !default;
+$lv-item-note-icon-color:         #c7c7cc !default;
+$lv-item-link-hover-color:        $brand-primary !default;
+$lv-item-radio-active-color:      $brand-primary !default;
+
+$lv-switch-bg:                    #fff !default;
+$lv-switch-active-bg:             $brand-primary !default;
+$lv-switch-border-color:          #e6e6e6 !default;
+$lv-switch-handle-bg:             #fff !default;
+$lv-switch-handle-active-bg:      $lv-switch-handle-bg !default;
+
+$lv-floating-label-focus-color:   $brand-primary !default;
+$lv-floating-label-error-color:   $state-danger-text !default;

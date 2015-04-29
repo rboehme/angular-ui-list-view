@@ -1,0 +1,138 @@
+.item-checkbox {
+  &.item-selected {
+    .icon-check {
+      display: inline-block;
+    }
+  }
+
+  .item-content {
+    @include user-select(none);
+
+    > div:first-of-type {
+      flex-direction: row;
+
+      > div {
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      > .switch {
+        align-self: center;
+        width: 44px;
+        min-width: 44px;
+      }
+    }
+  }
+
+  &.item-label-reverse {
+    .item-content {
+      > div > div {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+
+  .icon-check {
+    display: none;
+  }
+
+  .checkbox {
+    display: none;
+  }
+
+  &.item-reverse {
+    .item-content {
+      > div:first-of-type {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+}
+
+.switch {
+  position: relative;
+  width: 44px;
+  display: inline-block;
+
+  .checkbox {
+    display: none;
+
+    &:disabled + label {
+      background-color: rgba($lv-switch-border-color, .4);
+      cursor: not-allowed;
+
+      &:before {
+        @include box-shadow(1px 1px 3px 0 rgba(0, 0, 0, .15));
+      }
+    }
+
+    &:checked + label {
+      background-color: $lv-switch-active-bg;
+
+      &:before {
+        left: 19px;
+        background-color: $lv-switch-handle-active-bg;
+      }
+
+      &:after {
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+      }
+    }
+
+    &:disabled {
+      &:checked + label {
+        background-color: rgba($lv-switch-active-bg, .2);
+
+        &:before {
+          background-color: $lv-switch-handle-active-bg;
+        }
+      }
+    }
+  }
+
+  label {
+    display: block;
+    width: 48px;
+    height: 26px;
+    max-width: 100%;
+    margin-bottom: 0;
+    background-color: $lv-switch-border-color;
+    border-radius: 15px;
+    cursor: pointer;
+
+    @include transition(all .5s ease);
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      display: block;
+      height: 24px;
+
+      @include transition(all .4s ease);
+    }
+
+    &:before {
+      z-index: 3;
+      width: 24px;
+      background-color: $lv-switch-handle-bg;
+      border-radius: 50%;
+
+      @include box-shadow(1px 1px 3px 0 rgba(0, 0, 0, .3));
+    }
+
+    &:after {
+      z-index: 2;
+      width: 42px;
+      background-color: $lv-switch-bg;
+      border-radius: 14px;
+    }
+  }
+}

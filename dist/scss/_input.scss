@@ -1,0 +1,54 @@
+.item-input {
+  &.input-disabled {
+    .item-content {
+      cursor: not-allowed;
+    }
+  }
+
+  .item-content {
+    @include user-select(none);
+
+    > div,
+    > label {
+      width: 100%;
+    }
+  }
+
+  .input {
+    display: block;
+    float: none;
+    width: 100%;
+    padding: 0;
+    line-height: $line-height-base;
+    outline: 0;
+    border: none;
+
+    @include placeholder;
+
+    &[readonly] {
+      cursor: auto;
+    }
+
+    &[disabled] {
+      opacity: 1;
+      background-color: transparent;
+      cursor: not-allowed;
+    }
+
+    &[type="number"] {
+      -moz-appearance: textfield;
+
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        margin: 0;
+        -webkit-appearance: none;
+      }
+    }
+  }
+
+  &.item-reverse {
+    .input {
+      text-align: right;
+    }
+  }
+}
