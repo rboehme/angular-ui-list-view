@@ -62,14 +62,16 @@ angular.module('ngUIListView', [])
     scope: {
       type: '@',
       value: '=ngModel',
+      name: '@',
       disabled: '=ngDisabled',
+      pattern: '@',
       placeholder: '@'
     },
     template: '<div>' +
                 '<label ng-class="{\'has-input\': value, \'has-input-focus\': focus}" class="floating-label">' +
                   '<div>' +
                     '<div ng-bind="placeholder" class="label"></div>' +
-                    '<input type="{{type ? type : \'text\'}}" ng-model="value" ng-disabled="disabled" class="input" placeholder="{{placeholder}}">' +
+                    '<input type="{{type ? type : \'text\'}}" ng-model="value" name="{{name}}" ng-disabled="disabled" ng-pattern="pattern" class="input" placeholder="{{placeholder}}">' +
                   '</div>' +
                 '</label>' +
               '</div>',
