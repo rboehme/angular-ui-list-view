@@ -124,19 +124,22 @@ angular.module('ngUIListView', [])
       });
 
       var handler = function(selected) {
-        var checked = $element.find('input').prop('checked'),
-          index = $scope.multiple.indexOf($scope.value);
+        var checked = $element.find('input').prop('checked');
 
-        if(checked && index === -1) {
-          selected ? $element.find('input').prop('checked', false) : $scope.multiple.push($scope.value);
-        } else if(!checked && index !== -1) {
-          selected ? $element.find('input').prop('checked', true) : $scope.multiple.splice(index, 1);
+        if($scope.multiple) {
+          var index = $scope.multiple.indexOf($scope.value);
+
+          if(checked && index === -1) {
+            selected ? $element.find('input').prop('checked', false) : $scope.multiple.push($scope.value);
+          } else if(!checked && index !== -1) {
+            selected ? $element.find('input').prop('checked', true) : $scope.multiple.splice(index, 1);
+          }
         }
 
         $ctrl.scope.selected = $element.find('input').prop('checked');
       };
 
-      if('ngMultiple' in $attrs) {
+      if($scope.multiple) {
         var defaultHandler = angular.bind(self, handler, true),
           changeHandler = angular.bind(self, handler, false);
 
