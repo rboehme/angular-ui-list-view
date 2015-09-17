@@ -143,8 +143,14 @@ angular.module('ngUIListView', [])
         var defaultHandler = angular.bind(self, handler, true),
           changeHandler = angular.bind(self, handler, false);
 
+        $scope.$watch('ngModel', function(value) {
+          if(value !== undefined) {
+            angular.element($element[0]).triggerHandler('change');
+          }
+        });
+
         $element.on('change', function() {
-          $scope.$apply(changeHandler);
+          changeHandler();
         });
 
         $scope.$watch('multiple', defaultHandler);
