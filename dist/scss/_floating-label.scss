@@ -15,27 +15,36 @@
   }
 
   .label {
-    position: relative;
-    top: #{$line-height-base}em;
+    position: absolute;
+    top: 16px;
+    right: 0;
     left: 0;
-    z-index: -1;
     display: inline-block;
+    width: 100%;
     padding: 0;
-    font-size: 85%;
+    overflow: hidden;
+    font-size: $font-size-base;
     font-weight: normal;
-    text-align: left;
     color: $lv-item-label-color;
-    cursor: pointer;
+    text-align: left;
+    white-space: nowrap;
+    cursor: auto;
 
-    @include opacity(0);
+    @include transition-duration(.2s);
+    @include transition-timing-function(cubic-bezier(.455, .3, .455, .955));
   }
 
-  &.has-input .label {
-    top: 0;
-    z-index: 3;
+  .input {
+    z-index: 0;
+    margin-top: 13px;
+    background-color: transparent;
+  }
 
-    @include opacity(1);
-    @include transition(opacity .15s ease, all .2s linear);
+  &.has-input .label,
+  &.has-input-focus .label {
+    top: 0;
+    font-size: 85%;
+    cursor: pointer;
   }
 
   &.has-input-focus .label {
