@@ -71,7 +71,7 @@ angular.module('ngUIListView', [])
                 '<label ng-class="{\'has-input\': value, \'has-input-focus\': focus}" class="floating-label">' +
                   '<div>' +
                     '<div ng-bind="placeholder" class="label"></div>' +
-                    '<input type="{{type ? type : \'text\'}}" ng-model="value" name="{{name}}" ng-disabled="disabled" ng-pattern="pattern" class="input" placeholder="{{placeholder}}">' +
+                    '<input type="{{type ? type : \'text\'}}" ng-model="value" name="{{name}}" ng-disabled="disabled" ng-pattern="pattern" class="input">' +
                   '</div>' +
                 '</label>' +
               '</div>',
@@ -198,7 +198,7 @@ angular.module('ngUIListView', [])
     template: '<label ng-class="{\'has-input\': isNumber(value) || value, \'has-input-focus\': focus}" class="floating-label">' +
                 '<div>' +
                   '<div ng-bind="placeholder" class="label"></div>' +
-                  '<input type="number" ng-model="value" ng-disabled="disabled" min="{{config.min}}" max="{{config.max}}" step="{{config.stepSize}}" class="input" placeholder="{{placeholder}}">' +
+                  '<input type="number" ng-model="value" ng-disabled="disabled" min="{{config.min}}" max="{{config.max}}" step="{{config.stepSize}}" class="input">' +
                 '</div>' +
                 '<div class="btn-group stepper">' +
                   '<a class="btn" ng-click="decrement()">' +
