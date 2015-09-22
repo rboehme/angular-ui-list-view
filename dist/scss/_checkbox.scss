@@ -53,15 +53,15 @@
 
 .switch {
   position: relative;
-  width: 44px;
   display: inline-block;
+  width: 44px;
 
   .checkbox {
     display: none;
 
     &:disabled + label {
-      background-color: rgba($lv-switch-border-color, .4);
       cursor: not-allowed;
+      background-color: rgba($lv-switch-border-color, .4);
 
       &:before {
         @include box-shadow(1px 1px 3px 0 rgba(0, 0, 0, .15));
@@ -101,9 +101,9 @@
     height: 26px;
     max-width: 100%;
     margin-bottom: 0;
+    cursor: pointer;
     background-color: $lv-switch-border-color;
     border-radius: 15px;
-    cursor: pointer;
 
     @include transition(all .5s ease);
 

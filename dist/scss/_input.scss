@@ -20,8 +20,8 @@
     width: 100%;
     padding: 0;
     line-height: $line-height-base;
-    outline: 0;
     border: none;
+    outline: 0;
 
     @include placeholder;
 
@@ -30,9 +30,9 @@
     }
 
     &[disabled] {
-      opacity: 1;
-      background-color: transparent;
       cursor: not-allowed;
+      background-color: transparent;
+      opacity: 1;
     }
 
     &[type="number"] {

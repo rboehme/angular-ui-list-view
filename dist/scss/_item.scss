@@ -1,17 +1,17 @@
 .item:not(.item-icon) + .item-icon {
-  @include border-image(linear-gradient(left, transparent $lv-item-padding, $lv-item-divider-border-color $lv-item-padding, $lv-item-divider-border-color 100%) 1 stretch);
+  @include border-image(linear-gradient(left, $lv-item-bg $lv-item-padding, $lv-item-divider-border-color $lv-item-padding, $lv-item-divider-border-color 100%) 1 stretch);
 }
 
 .item-icon + .item-icon {
-  @include border-image(linear-gradient(left, transparent ($lv-item-padding * 4), $lv-item-divider-border-color ($lv-item-padding * 4), $lv-item-divider-border-color 100%) 1 stretch);
+  @include border-image(linear-gradient(left, $lv-item-bg ($lv-item-padding * 4), $lv-item-divider-border-color ($lv-item-padding * 4), $lv-item-divider-border-color 100%) 1 stretch);
 }
 
 .item-reverse:not(.item-icon) + .item-icon {
-  @include border-image(linear-gradient(right, transparent $lv-item-padding, $lv-item-divider-border-color $lv-item-padding, $lv-item-divider-border-color 100%) 1 stretch);
+  @include border-image(linear-gradient(right, $lv-item-bg $lv-item-padding, $lv-item-divider-border-color $lv-item-padding, $lv-item-divider-border-color 100%) 1 stretch);
 }
 
 .item-reverse.item-icon + .item-icon {
-  @include border-image(linear-gradient(right, transparent ($lv-item-padding * 4), $lv-item-divider-border-color ($lv-item-padding * 4), $lv-item-divider-border-color 100%) 1 stretch);
+  @include border-image(linear-gradient(right, $lv-item-bg ($lv-item-padding * 4), $lv-item-divider-border-color ($lv-item-padding * 4), $lv-item-divider-border-color 100%) 1 stretch);
 }
 
 .item {
@@ -21,7 +21,7 @@
   border-width: 1px 0 0;
   border-top-color: $lv-item-divider-border-color;
 
-  @include border-image(linear-gradient(left, transparent $lv-item-padding, $lv-item-divider-border-color $lv-item-padding, $lv-item-divider-border-color 100%) 1 stretch);
+  @include border-image(linear-gradient(left, $lv-item-bg $lv-item-padding, $lv-item-divider-border-color $lv-item-padding, $lv-item-divider-border-color 100%) 1 stretch);
 
   &.active {
     z-index: 1;
@@ -46,7 +46,7 @@
   }
 
   &.item-reverse {
-    @include border-image(linear-gradient(right, transparent $lv-item-padding, $lv-item-divider-border-color $lv-item-padding, $lv-item-divider-border-color 100%) 1 stretch);
+    @include border-image(linear-gradient(right, $lv-item-bg $lv-item-padding, $lv-item-divider-border-color $lv-item-padding, $lv-item-divider-border-color 100%) 1 stretch);
 
     .item-content {
       flex-direction: row-reverse;
@@ -76,8 +76,8 @@
   > span,
   > div {
     display: flex;
-    flex-direction: column;
     flex: 1;
+    flex-direction: column;
 
     p {
       margin-bottom: 0;
@@ -103,11 +103,11 @@ label.item-content {
     display: inline-block;
     width: 100%;
     padding: 0;
-    line-height: $line-height-base;
     font-size: 85%;
     font-weight: normal;
-    text-align: left;
+    line-height: $line-height-base;
     color: $lv-item-label-color;
+    text-align: left;
   }
 
   &.item-label-reverse {
@@ -139,10 +139,10 @@ label.item-content {
     font-size: $font-size-small;
     font-weight: $badge-font-weight;
     line-height: $badge-line-height;
-    vertical-align: baseline;
-    white-space: nowrap;
-    text-align: center;
     color: $badge-color;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
     background-color: $badge-bg;
     border-radius: $badge-border-radius;
   }

@@ -32,10 +32,10 @@
     .stepper {
       > .btn {
         color: rgba($brand-primary, .5);
+        pointer-events: none;
+        cursor: not-allowed;
         background-color: transparent;
         border-color: rgba($btn-primary-border, .25);
-        cursor: not-allowed;
-        pointer-events: none;
       }
     }
   }
