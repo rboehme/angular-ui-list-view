@@ -2,86 +2,111 @@
   position: relative;
   background-color: #fff;
 }
-.list > .item:first-of-type {
+.list > .item:first-of-type,
+.list > *:first-of-type > .item:first-of-type {
   border-top-width: 0;
-}
-.list > .item:last-of-type {
-  border-bottom-width: 0;
 }
 
 .list-divider {
   align-items: center;
   display: flex;
+  justify-content: space-between;
   min-height: 30px;
   padding: 0 10px;
   font-size: 90%;
-  text-transform: uppercase;
   color: #8f8f94;
+  text-transform: uppercase;
   background-color: #efeff4;
 }
 .list-divider.list-divider-reverse {
   flex-direction: row-reverse;
 }
-.list-divider + .list-group {
-  border-style: solid;
-  border-width: 1px 0;
-  border-color: #dadade;
+.list-divider:not(:empty) {
+  padding-top: 20px;
+  padding-bottom: 5px;
 }
 
 .list-group {
   margin-bottom: 0;
+  border-color: #dadade;
+  border-style: solid;
+  border-width: 1px 0;
 }
-.list-group > *:first-of-type > .item,
-.list-group > .item:first-of-type {
+.list-group > .item:first-of-type,
+.list-group > *:first-of-type > .item {
   border-top-width: 0;
 }
-.list-group > *:last-of-type > .item,
-.list-group > .item:last-of-type {
-  border-bottom-width: 0;
+
+.list-inset {
+  margin-right: 15px;
+  margin-left: 15px;
+  background-color: transparent;
+  border-radius: 6px;
+}
+.list-inset .list-group {
+  margin-bottom: 0;
+  border-width: 0;
+}
+.list-inset > .item:first-of-type .item-content,
+.list-inset > *:first-of-type > .item:first-of-type .item-content,
+.list-inset .list-group > .item:first-of-type .item-content,
+.list-inset .list-group > *:first-of-type > .item:first-of-type .item-content {
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+}
+.list-inset > .item:last-of-type .item-content,
+.list-inset > *:last-of-type > .item:last-of-type .item-content,
+.list-inset .list-group > .item:last-of-type .item-content,
+.list-inset .list-group > *:last-of-type > .item:last-of-type .item-content {
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.list-inset + .list-inset {
+  margin-top: 15px;
 }
 
 .item:not(.item-icon) + .item-icon {
-  -moz-border-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -moz-border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -o-border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -webkit-border-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -webkit-border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  -moz-border-image: -moz-linear-gradient(left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  -moz-border-image: linear-gradient(to right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  -o-border-image: linear-gradient(to right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  -webkit-border-image: -webkit-linear-gradient(left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  -webkit-border-image: linear-gradient(to right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  border-image: -moz-linear-gradient(left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  border-image: -webkit-linear-gradient(left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  border-image: linear-gradient(to right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
 }
 
 .item-icon + .item-icon {
-  -moz-border-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -moz-border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -o-border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -webkit-border-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -webkit-border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  border-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  border-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  -moz-border-image: -moz-linear-gradient(left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  -moz-border-image: linear-gradient(to right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  -o-border-image: linear-gradient(to right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  -webkit-border-image: -webkit-linear-gradient(left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  -webkit-border-image: linear-gradient(to right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  border-image: -moz-linear-gradient(left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  border-image: -webkit-linear-gradient(left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  border-image: linear-gradient(to right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
 }
 
 .item-reverse:not(.item-icon) + .item-icon {
-  -moz-border-image: -moz-linear-gradient(right, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -moz-border-image: linear-gradient(to left, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -o-border-image: linear-gradient(to left, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -webkit-border-image: -webkit-linear-gradient(right, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -webkit-border-image: linear-gradient(to left, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: -moz-linear-gradient(right, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: -webkit-linear-gradient(right, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: linear-gradient(to left, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  -moz-border-image: -moz-linear-gradient(right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  -moz-border-image: linear-gradient(to left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  -o-border-image: linear-gradient(to left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  -webkit-border-image: -webkit-linear-gradient(right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  -webkit-border-image: linear-gradient(to left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  border-image: -moz-linear-gradient(right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  border-image: -webkit-linear-gradient(right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  border-image: linear-gradient(to left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
 }
 
 .item-reverse.item-icon + .item-icon {
-  -moz-border-image: -moz-linear-gradient(right, rgba(0, 0, 0, 0) 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -moz-border-image: linear-gradient(to left, rgba(0, 0, 0, 0) 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -o-border-image: linear-gradient(to left, rgba(0, 0, 0, 0) 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -webkit-border-image: -webkit-linear-gradient(right, rgba(0, 0, 0, 0) 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -webkit-border-image: linear-gradient(to left, rgba(0, 0, 0, 0) 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  border-image: -moz-linear-gradient(right, rgba(0, 0, 0, 0) 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  border-image: -webkit-linear-gradient(right, rgba(0, 0, 0, 0) 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  border-image: linear-gradient(to left, rgba(0, 0, 0, 0) 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  -moz-border-image: -moz-linear-gradient(right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  -moz-border-image: linear-gradient(to left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  -o-border-image: linear-gradient(to left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  -webkit-border-image: -webkit-linear-gradient(right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  -webkit-border-image: linear-gradient(to left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  border-image: -moz-linear-gradient(right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  border-image: -webkit-linear-gradient(right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  border-image: linear-gradient(to left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
 }
 
 .item {
@@ -90,14 +115,14 @@
   border-style: solid;
   border-width: 1px 0 0;
   border-top-color: #dadade;
-  -moz-border-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -moz-border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -o-border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -webkit-border-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -webkit-border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  -moz-border-image: -moz-linear-gradient(left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  -moz-border-image: linear-gradient(to right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  -o-border-image: linear-gradient(to right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  -webkit-border-image: -webkit-linear-gradient(left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  -webkit-border-image: linear-gradient(to right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  border-image: -moz-linear-gradient(left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  border-image: -webkit-linear-gradient(left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  border-image: linear-gradient(to right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
 }
 .item.active {
   z-index: 1;
@@ -116,14 +141,14 @@
   cursor: not-allowed;
 }
 .item.item-reverse {
-  -moz-border-image: -moz-linear-gradient(right, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -moz-border-image: linear-gradient(to left, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -o-border-image: linear-gradient(to left, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -webkit-border-image: -webkit-linear-gradient(right, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -webkit-border-image: linear-gradient(to left, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: -moz-linear-gradient(right, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: -webkit-linear-gradient(right, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: linear-gradient(to left, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  -moz-border-image: -moz-linear-gradient(right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  -moz-border-image: linear-gradient(to left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  -o-border-image: linear-gradient(to left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  -webkit-border-image: -webkit-linear-gradient(right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  -webkit-border-image: linear-gradient(to left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  border-image: -moz-linear-gradient(right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  border-image: -webkit-linear-gradient(right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  border-image: linear-gradient(to left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
 }
 .item.item-reverse .item-content {
   flex-direction: row-reverse;
@@ -149,8 +174,8 @@
 .item-content > span,
 .item-content > div {
   display: flex;
-  flex-direction: column;
   flex: 1;
+  flex-direction: column;
 }
 .item-content > span p,
 .item-content > div p {
@@ -174,11 +199,11 @@ label.item-content {
   display: inline-block;
   width: 100%;
   padding: 0;
-  line-height: 1.42857;
   font-size: 85%;
   font-weight: normal;
-  text-align: left;
+  line-height: 1.42857;
   color: #a0a0a5;
+  text-align: left;
 }
 .item-label.item-label-reverse .item-content > span,
 .item-label.item-label-reverse .item-content > div {
@@ -203,10 +228,10 @@ label.item-content {
   font-size: 12px;
   font-weight: bold;
   line-height: 1;
-  vertical-align: baseline;
-  white-space: nowrap;
-  text-align: center;
   color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
   background-color: #777777;
   border-radius: 10px;
 }
@@ -254,8 +279,8 @@ label.item-content {
   width: 100%;
   padding: 0;
   line-height: 1.42857;
-  outline: 0;
   border: none;
+  outline: 0;
 }
 .item-input .input::-moz-placeholder, .item-stepper .input::-moz-placeholder {
   color: #999;
@@ -271,9 +296,9 @@ label.item-content {
   cursor: auto;
 }
 .item-input .input[disabled], .item-stepper .input[disabled] {
-  opacity: 1;
-  background-color: transparent;
   cursor: not-allowed;
+  background-color: transparent;
+  opacity: 1;
 }
 .item-input .input[type="number"], .item-stepper .input[type="number"] {
   -moz-appearance: textfield;
@@ -311,10 +336,10 @@ label.item-content {
 }
 .item-stepper.item-disabled .stepper > .btn {
   color: rgba(51, 122, 183, 0.5);
+  pointer-events: none;
+  cursor: not-allowed;
   background-color: transparent;
   border-color: rgba(46, 109, 164, 0.25);
-  cursor: not-allowed;
-  pointer-events: none;
 }
 .item-stepper.item-reverse .input {
   margin-left: 60px;
@@ -359,15 +384,15 @@ label.item-content {
 
 .switch {
   position: relative;
-  width: 44px;
   display: inline-block;
+  width: 44px;
 }
 .switch .checkbox {
   display: none;
 }
 .switch .checkbox:disabled + label {
-  background-color: rgba(230, 230, 230, 0.4);
   cursor: not-allowed;
+  background-color: rgba(230, 230, 230, 0.4);
 }
 .switch .checkbox:disabled + label:before {
   -webkit-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.15);
@@ -398,9 +423,9 @@ label.item-content {
   height: 26px;
   max-width: 100%;
   margin-bottom: 0;
+  cursor: pointer;
   background-color: #e6e6e6;
   border-radius: 15px;
-  cursor: pointer;
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
@@ -432,24 +457,44 @@ label.item-content {
 }
 
 .item-radio.active, .item-radio.active + .item {
-  -moz-border-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -moz-border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -o-border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -webkit-border-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -webkit-border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  -moz-border-image: -moz-linear-gradient(left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  -moz-border-image: linear-gradient(to right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  -o-border-image: linear-gradient(to right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  -webkit-border-image: -webkit-linear-gradient(left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  -webkit-border-image: linear-gradient(to right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  border-image: -moz-linear-gradient(left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  border-image: -webkit-linear-gradient(left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  border-image: linear-gradient(to right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
 }
 .item-radio.active.item-reverse, .item-radio.active + .item.item-reverse {
-  -moz-border-image: -moz-linear-gradient(right, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -moz-border-image: linear-gradient(to left, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -o-border-image: linear-gradient(to left, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -webkit-border-image: -webkit-linear-gradient(right, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -webkit-border-image: linear-gradient(to left, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: -moz-linear-gradient(right, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: -webkit-linear-gradient(right, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: linear-gradient(to left, rgba(0, 0, 0, 0) 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  -moz-border-image: -moz-linear-gradient(right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  -moz-border-image: linear-gradient(to left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  -o-border-image: linear-gradient(to left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  -webkit-border-image: -webkit-linear-gradient(right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  -webkit-border-image: linear-gradient(to left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  border-image: -moz-linear-gradient(right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  border-image: -webkit-linear-gradient(right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  border-image: linear-gradient(to left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+}
+.item-radio.item-icon + .item-icon {
+  -moz-border-image: -moz-linear-gradient(left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  -moz-border-image: linear-gradient(to right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  -o-border-image: linear-gradient(to right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  -webkit-border-image: -webkit-linear-gradient(left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  -webkit-border-image: linear-gradient(to right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  border-image: -moz-linear-gradient(left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  border-image: -webkit-linear-gradient(left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  border-image: linear-gradient(to right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+}
+.item-radio.item-reverse.item-icon + .item-icon {
+  -moz-border-image: -moz-linear-gradient(right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  -moz-border-image: linear-gradient(to left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  -o-border-image: linear-gradient(to left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  -webkit-border-image: -webkit-linear-gradient(right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  -webkit-border-image: linear-gradient(to left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  border-image: -moz-linear-gradient(right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  border-image: -webkit-linear-gradient(right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  border-image: linear-gradient(to left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
 }
 .item-radio .item-content {
   -webkit-user-select: none;
@@ -523,14 +568,14 @@ label.item-content {
 }
 
 .item-icon {
-  -moz-border-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -moz-border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -o-border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -webkit-border-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -webkit-border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  border-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  border-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  -moz-border-image: -moz-linear-gradient(left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  -moz-border-image: linear-gradient(to right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  -o-border-image: linear-gradient(to right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  -webkit-border-image: -webkit-linear-gradient(left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  -webkit-border-image: linear-gradient(to right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  border-image: -moz-linear-gradient(left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  border-image: -webkit-linear-gradient(left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  border-image: linear-gradient(to right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
 }
 .item-icon .item-content {
   padding-left: 40px;
@@ -553,14 +598,14 @@ label.item-content {
   position: relative;
 }
 .item-icon.item-reverse {
-  -moz-border-image: -moz-linear-gradient(right, rgba(0, 0, 0, 0) 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -moz-border-image: linear-gradient(to left, rgba(0, 0, 0, 0) 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -o-border-image: linear-gradient(to left, rgba(0, 0, 0, 0) 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -webkit-border-image: -webkit-linear-gradient(right, rgba(0, 0, 0, 0) 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -webkit-border-image: linear-gradient(to left, rgba(0, 0, 0, 0) 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  border-image: -moz-linear-gradient(right, rgba(0, 0, 0, 0) 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  border-image: -webkit-linear-gradient(right, rgba(0, 0, 0, 0) 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  border-image: linear-gradient(to left, rgba(0, 0, 0, 0) 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  -moz-border-image: -moz-linear-gradient(right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  -moz-border-image: linear-gradient(to left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  -o-border-image: linear-gradient(to left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  -webkit-border-image: -webkit-linear-gradient(right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  -webkit-border-image: linear-gradient(to left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  border-image: -moz-linear-gradient(right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  border-image: -webkit-linear-gradient(right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  border-image: linear-gradient(to left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
 }
 .item-icon.item-reverse .item-content {
   padding-right: 40px;
@@ -572,14 +617,14 @@ label.item-content {
 }
 
 .item-image {
-  -moz-border-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  -moz-border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  -o-border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  -webkit-border-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  -webkit-border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  border-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  border-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 70px, #dadade 70px, #dadade 100%) 1 stretch;
+  -moz-border-image: -moz-linear-gradient(left, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
+  -moz-border-image: linear-gradient(to right, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
+  -o-border-image: linear-gradient(to right, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
+  -webkit-border-image: -webkit-linear-gradient(left, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
+  -webkit-border-image: linear-gradient(to right, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
+  border-image: -moz-linear-gradient(left, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
+  border-image: -webkit-linear-gradient(left, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
+  border-image: linear-gradient(to right, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
 }
 .item-image .item-content {
   padding-left: 20px;
@@ -600,14 +645,14 @@ label.item-content {
   align-self: flex-end;
 }
 .item-image.item-reverse {
-  -moz-border-image: -moz-linear-gradient(right, rgba(0, 0, 0, 0) 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  -moz-border-image: linear-gradient(to left, rgba(0, 0, 0, 0) 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  -o-border-image: linear-gradient(to left, rgba(0, 0, 0, 0) 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  -webkit-border-image: -webkit-linear-gradient(right, rgba(0, 0, 0, 0) 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  -webkit-border-image: linear-gradient(to left, rgba(0, 0, 0, 0) 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  border-image: -moz-linear-gradient(right, rgba(0, 0, 0, 0) 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  border-image: -webkit-linear-gradient(right, rgba(0, 0, 0, 0) 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  border-image: linear-gradient(to left, rgba(0, 0, 0, 0) 70px, #dadade 70px, #dadade 100%) 1 stretch;
+  -moz-border-image: -moz-linear-gradient(right, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
+  -moz-border-image: linear-gradient(to left, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
+  -o-border-image: linear-gradient(to left, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
+  -webkit-border-image: -webkit-linear-gradient(right, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
+  -webkit-border-image: linear-gradient(to left, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
+  border-image: -moz-linear-gradient(right, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
+  border-image: -webkit-linear-gradient(right, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
+  border-image: linear-gradient(to left, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
 }
 .item-image.item-reverse .item-content {
   padding-right: 20px;

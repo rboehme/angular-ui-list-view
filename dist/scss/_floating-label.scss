@@ -2,6 +2,7 @@
   position: relative;
   display: flex;
   width: 100%;
+  min-height: $lv-item-height-sm;
   margin-bottom: 0;
   font-weight: normal;
 
@@ -9,6 +10,7 @@
     display: flex;
 
     &:first-of-type {
+      align-self: center;
       flex-direction: column;
       width: 100%;
     }
@@ -16,7 +18,7 @@
 
   .label {
     position: absolute;
-    top: 16px;
+    top: 19px;
     right: 0;
     left: 0;
     display: inline-block;
@@ -25,6 +27,7 @@
     overflow: hidden;
     font-size: $font-size-base;
     font-weight: normal;
+    line-height: $line-height-base;
     color: $lv-item-label-color;
     text-align: left;
     white-space: nowrap;
@@ -32,17 +35,25 @@
 
     @include transition-duration(.2s);
     @include transition-timing-function(cubic-bezier(.455, .3, .455, .955));
+
+    + .input {
+      padding: 18px 0 0;
+    }
   }
 
   .input {
     z-index: 0;
-    margin-top: 13px;
     background-color: transparent;
+  }
+
+  textarea.input {
+    padding: 10px 0;
+    resize: vertical;
   }
 
   &.has-input .label,
   &.has-input-focus .label {
-    top: 0;
+    top: 2px;
     font-size: 85%;
     cursor: pointer;
   }

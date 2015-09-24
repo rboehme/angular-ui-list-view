@@ -70,7 +70,7 @@ angular.module('ngUIListView', [])
     template: '<div>' +
                 '<label ng-class="{\'has-input\': value, \'has-input-focus\': focus}" class="floating-label">' +
                   '<div>' +
-                    '<div ng-bind="placeholder" class="label"></div>' +
+                    '<div ng-if="placeholder" ng-bind="placeholder" class="label"></div>' +
                     '<input type="{{type ? type : \'text\'}}" ng-model="value" name="{{name}}" ng-disabled="disabled" ng-pattern="pattern" class="input">' +
                   '</div>' +
                 '</label>' +
@@ -81,6 +81,29 @@ angular.module('ngUIListView', [])
       });
     }
   };
+})
+.directive('itemTextarea', function() {
+  return {
+    restrict: 'E',
+    require: '^listItem',
+    transclude: true,
+    replace: true,
+    scope: {
+      value: '=ngModel',
+      name: '@',
+      disabled: '=ngDisabled',
+      pattern: '@',
+      placeholder: '@'
+    },
+    template: '<div>' +
+                '<label ng-class="{\'has-input\': value, \'has-input-focus\': focus}" class="floating-label">' +
+                  '<div>' +
+                    '<div ng-if="placeholder" ng-bind="placeholder" class="label"></div>' +
+                    '<textarea ng-model="value" name="{{name}}" ng-disabled="disabled" ng-pattern="pattern" class="input"></textarea>' +
+                  '</div>' +
+                '</label>' +
+              '</div>'
+  }
 })
 .directive('itemCheckbox', function() {
   return {
@@ -251,13 +274,13 @@ angular.module('ngUIListView', [])
   return {
     restrict: 'C',
     link: function($scope, $element) {
-      $element.find('input').bind('focus', function() {
+      angular.element($element[0].querySelectorAll('input, textarea')).bind('focus', function() {
         $scope.$apply(function() {
           $scope.focus = true;
         });
       });
 
-      $element.find('input').bind('blur', function() {
+      angular.element($element[0].querySelectorAll('input, textarea')).bind('blur', function() {
         $scope.$apply(function() {
           $scope.focus = false;
         });

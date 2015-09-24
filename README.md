@@ -139,8 +139,23 @@ Add `.list-divider-reverse` for a `.list-divider` with right-aligned content.
 #####Short doc for all input attributes:
 * `ng-model`, the value to bind the input to
 * `type`, specifies the type attribute of an input element, Default is `text`
+* `name`, specifies the name attribute of an input element
 * `placeholder`, sets the floating label
 * `ng-disabled`, specifies that an input element should be disabled
+
+###Textarea
+```html
+<!-- Textarea -->
+<list-item class="item-input">
+  <item-textarea ng-model="[YOUR-MODEL]" placeholder=""></item-textarea>
+</list-item>
+```
+
+#####Short doc for all textarea attributes:
+* `ng-model`, the value to bind the textarea to
+* `name`, specifies the name attribute of an textarea element
+* `placeholder`, sets the floating label
+* `ng-disabled`, specifies that an textarea element should be disabled
 
 ###Stepper
 ```html
