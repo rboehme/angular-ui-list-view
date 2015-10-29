@@ -51,4 +51,8 @@
       text-align: right;
     }
   }
+
+  &.has-input-error .label {
+    color: $lv-floating-label-error-color;
+  }
 }

@@ -1,17 +1,25 @@
-.item:not(.item-icon) + .item-icon {
+.item:not(.item-icon) + .item {
   @include border-image(linear-gradient(left, $lv-item-bg $lv-item-padding, $lv-item-divider-border-color $lv-item-padding, $lv-item-divider-border-color 100%) 1 stretch);
 }
 
-.item-icon + .item-icon {
+.item.item-icon + .item {
   @include border-image(linear-gradient(left, $lv-item-bg ($lv-item-padding * 4), $lv-item-divider-border-color ($lv-item-padding * 4), $lv-item-divider-border-color 100%) 1 stretch);
 }
 
-.item-reverse:not(.item-icon) + .item-icon {
+.item.item-image + .item {
+  @include border-image(linear-gradient(left, $lv-item-bg ($lv-item-height-lg + $lv-item-padding), $lv-item-divider-border-color ($lv-item-height-lg + $lv-item-padding), $lv-item-divider-border-color 100%) 1 stretch);
+}
+
+.item-reverse:not(.item-icon) + .item {
   @include border-image(linear-gradient(right, $lv-item-bg $lv-item-padding, $lv-item-divider-border-color $lv-item-padding, $lv-item-divider-border-color 100%) 1 stretch);
 }
 
-.item-reverse.item-icon + .item-icon {
+.item-reverse.item-icon + .item {
   @include border-image(linear-gradient(right, $lv-item-bg ($lv-item-padding * 4), $lv-item-divider-border-color ($lv-item-padding * 4), $lv-item-divider-border-color 100%) 1 stretch);
+}
+
+.item-reverse.item-image + .item {
+  @include border-image(linear-gradient(right, $lv-item-bg ($lv-item-height-lg + $lv-item-padding), $lv-item-divider-border-color ($lv-item-height-lg + $lv-item-padding), $lv-item-divider-border-color 100%) 1 stretch);
 }
 
 .item {
