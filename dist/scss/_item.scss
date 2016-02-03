@@ -1,3 +1,14 @@
+.item:not(.item-icon),
+.item.item-icon,
+.item.item-image,
+.item-reverse:not(.item-icon),
+.item-reverse.item-icon,
+.item-reverse.item-image {
+  + .item.active {
+    border-image: none;
+  }
+}
+
 .item:not(.item-icon) + .item {
   @include border-image(linear-gradient(left, $lv-item-bg $lv-item-padding, $lv-item-divider-border-color $lv-item-padding, $lv-item-divider-border-color 100%) 1 stretch);
 }

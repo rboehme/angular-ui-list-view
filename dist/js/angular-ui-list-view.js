@@ -117,7 +117,8 @@ angular.module('ngUIListView', [])
       value: '=',
       multiple: '=ngMultiple',
       disabled: '=ngDisabled',
-      handle: '@'
+      handle: '@',
+      name: '@'
     },
     template: function($element, $attrs) {
       var isMultiple = 'ngMultiple' in $attrs;
@@ -129,10 +130,10 @@ angular.module('ngUIListView', [])
                        '</div>';
 
       if(isMultiple) {
-        template += '<input type="checkbox" ng-model="ngModel" ng-value="value" ng-disabled="disabled" class="checkbox">';
+        template += '<input type="checkbox" ng-model="ngModel" ng-value="value" ng-disabled="disabled" name="{{name}}" class="checkbox">';
       } else {
         template += '<div class="switch">' +
-                      '<input type="checkbox" ng-model="ngModel" ng-value="value" ng-disabled="disabled" class="checkbox" id="{{handle}}">' +
+                      '<input type="checkbox" ng-model="ngModel" ng-value="value" ng-disabled="disabled" name="{{name}}" class="checkbox" id="{{handle}}">' +
                       '<label for="{{handle}}"></label>' +
                     '</div>';
       }
@@ -214,6 +215,7 @@ angular.module('ngUIListView', [])
     replace: true,
     scope: {
       value: '=ngModel',
+      name: '@',
       disabled: '=ngDisabled',
       placeholder: '@',
       options: '='
@@ -221,7 +223,7 @@ angular.module('ngUIListView', [])
     template: '<label ng-class="{\'has-input\': isNumber(value) || value, \'has-input-focus\': focus}" class="floating-label">' +
                 '<div>' +
                   '<div ng-bind="placeholder" class="label"></div>' +
-                  '<input type="number" ng-model="value" ng-disabled="disabled" min="{{config.min}}" max="{{config.max}}" step="{{config.stepSize}}" class="input">' +
+                  '<input type="number" ng-model="value" name="{{name}}" ng-disabled="disabled" min="{{config.min}}" max="{{config.max}}" step="{{config.stepSize}}" class="input">' +
                 '</div>' +
                 '<div class="btn-group stepper">' +
                   '<a class="btn" ng-click="decrement()">' +
