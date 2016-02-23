@@ -1,10 +1,10 @@
-.item:not(.item-icon):not(.item-checkbox):not(.item-radio),
+.item:not(.item-icon),
 .item.item-icon,
 .item.item-image,
-.item-reverse:not(.item-icon):not(.item-checkbox):not(.item-radio),
+.item-reverse:not(.item-icon),
 .item-reverse.item-icon,
 .item-reverse.item-image {
-  + .item.active {
+  + .item.active:not(.item-checkbox):not(.item-radio) {
     border-image: none;
   }
 }
