@@ -65,10 +65,10 @@
   margin-top: 15px;
 }
 
-.item:not(.item-icon) + .item.active,
+.item:not(.item-icon):not(.item-checkbox):not(.item-radio) + .item.active,
 .item.item-icon + .item.active,
 .item.item-image + .item.active,
-.item-reverse:not(.item-icon) + .item.active,
+.item-reverse:not(.item-icon):not(.item-checkbox):not(.item-radio) + .item.active,
 .item-reverse.item-icon + .item.active,
 .item-reverse.item-image + .item.active {
   border-image: none;

@@ -140,6 +140,7 @@ Add `.list-divider-reverse` for a `.list-divider` with right-aligned content.
 * `ng-model`, the value to bind the input to
 * `type`, specifies the type attribute of an input element, Default is `text`
 * `name`, specifies the name attribute of an input element
+* `id`, specifies the id attribute of an input element
 * `placeholder`, sets the floating label
 * `ng-disabled`, specifies that an input element should be disabled
 
@@ -154,6 +155,7 @@ Add `.list-divider-reverse` for a `.list-divider` with right-aligned content.
 #####Short doc for all textarea attributes:
 * `ng-model`, the value to bind the textarea to
 * `name`, specifies the name attribute of an textarea element
+* `id`, specifies the id attribute of an textarea element
 * `placeholder`, sets the floating label
 * `ng-disabled`, specifies that an textarea element should be disabled
 
@@ -173,6 +175,8 @@ Add `.list-divider-reverse` for a `.list-divider` with right-aligned content.
 
 #####Short doc for all stepper attributes:
 * `ng-model`, the value to bind the stepper to
+* `name`, specifies the name attribute for the stepper
+* `id`, specifies the id attribute for the stepper
 * `placeholder`, sets the floating label
 * `ng-disabled`, specifies that a stepper should be disabled
 * `options`, override global defaults for given stepper, Object structure is `{ min: 1, max: 10 }`
@@ -226,6 +230,7 @@ angular.module('myApp', ['ngUIListView'])
 #####Short doc for all checkbox attributes:
 * `ng-model`, the value to bind the checkbox to
 * `ng-multiple`, the array that contains the values for the selected items
+* `name`, specifies the name attribute of a checkbox
 * `value`, specifies which value should be picked as `ng-multiple` array
 * `handle`, specifies which checkbox is bound to
 * `label`, sets a fixed label
