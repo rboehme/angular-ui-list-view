@@ -138,6 +138,7 @@ Add `.list-divider-reverse` for a `.list-divider` with right-aligned content.
 
 #####Short doc for all input attributes:
 * `ng-model`, the value to bind the input to
+* `ng-model-options`, specifies what options the data binding must follow
 * `type`, specifies the type attribute of an input element, Default is `text`
 * `name`, specifies the name attribute of an input element
 * `id`, specifies the id attribute of an input element
@@ -154,6 +155,7 @@ Add `.list-divider-reverse` for a `.list-divider` with right-aligned content.
 
 #####Short doc for all textarea attributes:
 * `ng-model`, the value to bind the textarea to
+* `ng-model-options`, specifies what options the data binding must follow
 * `name`, specifies the name attribute of an textarea element
 * `id`, specifies the id attribute of an textarea element
 * `placeholder`, sets the floating label
@@ -175,6 +177,7 @@ Add `.list-divider-reverse` for a `.list-divider` with right-aligned content.
 
 #####Short doc for all stepper attributes:
 * `ng-model`, the value to bind the stepper to
+* `ng-model-options`, specifies what options the data binding must follow
 * `name`, specifies the name attribute for the stepper
 * `id`, specifies the id attribute for the stepper
 * `placeholder`, sets the floating label
@@ -229,6 +232,7 @@ angular.module('myApp', ['ngUIListView'])
 
 #####Short doc for all checkbox attributes:
 * `ng-model`, the value to bind the checkbox to
+* `ng-model-options`, specifies what options the data binding must follow
 * `ng-multiple`, the array that contains the values for the selected items
 * `name`, specifies the name attribute of a checkbox
 * `value`, specifies which value should be picked as `ng-multiple` array
@@ -258,6 +262,7 @@ angular.module('myApp', ['ngUIListView'])
 
 #####Short doc for all radio button attributes:
 * `ng-model`, the value to bind the radio button to
+* `ng-model-options`, specifies what options the data binding must follow
 * `name`, specifies the name attribute of a radio button
 * `value`, sets the returning value
 * `label`, sets a fixed label
@@ -280,4 +285,13 @@ Reverse order of labels only work with plain & link items, checkbox and radio bu
 <list-item class="item-label item-label-reverse">
   ...
 </list-item>
+```
+
+###Inset list
+Add `.list-inset` for a `.list` if you'd like to have a inset list view.
+
+```html
+<div class="list list-inset">
+  ...
+</div>
 ```
