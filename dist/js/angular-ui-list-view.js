@@ -13,7 +13,6 @@ angular.module('ngUIListView', [])
   .directive('listItem', function () {
     return {
       restrict: 'E',
-      scope: {},
       controller: ['$scope', '$element', function ($scope, $element) {
         this.scope = $scope;
         this.element = $element;
@@ -26,16 +25,40 @@ angular.module('ngUIListView', [])
           value ? $element.addClass('item-selected') : $element.removeClass('item-selected');
         });
       }],
-      compile: function ($element) {
-        var listItemContent = ($element.hasClass('item-checkbox') || $element.hasClass('item-radio')) ?
-          angular.element('<label class="item-content"></label>') :
-          angular.element('<div class="item-content"></div>');
+      compile: function ($element, $attrs) {
+        var isAnchor = angular.isDefined($attrs.href) || angular.isDefined($attrs.ngHref) || angular.isDefined($attrs.uiSref);
+        var isLabel = $element.hasClass('item-checkbox') || $element.hasClass('item-radio');
 
+        var listItemContent = angular.element(isAnchor ? '<a></a>' : (isLabel ? '<label></label>' : '<div></div>'));
+
+        if (isAnchor) {
+          if (angular.isDefined($attrs.href) || angular.isDefined($attrs.ngHref)) {
+            listItemContent.attr('ng-href', $attrs.href || $attrs.ngHref);
+
+            if (angular.isDefined($attrs.target)) {
+              listItemContent.attr('target', $attrs.target);
+            }
+          } else if (angular.isDefined($attrs.uiSref)) {
+            listItemContent.attr('ui-sref', $attrs.uiSref);
+          }
+        }
+
+        listItemContent.addClass('item-content');
         listItemContent.append($element.contents());
+
         $element.append(listItemContent);
         $element.addClass('item');
       }
     };
+  })
+  .directive('itemPrefix', function () {
+    return {
+      restrict: 'E',
+      require: '^listItem',
+      transclude: true,
+      replace: true,
+      template: '<div ng-transclude class="item-prefix"></div>'
+    }
   })
   .directive('itemOption', function () {
     return {

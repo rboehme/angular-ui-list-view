@@ -86,7 +86,6 @@
   position: relative;
   align-items: center;
   display: flex;
-  justify-content: space-between;
   min-height: $lv-item-height-sm;
   padding: 0 $lv-item-padding;
   color: $lv-item-color;
@@ -106,8 +105,15 @@
     }
   }
 
-  .item-note {
+  > .item-prefix {
     flex: initial;
+    min-width: 20px;
+    margin-right: 10px;
+  }
+
+  .item-note {
+    flex-direction: row;
+    justify-content: flex-end;
   }
 }
 
@@ -143,7 +149,6 @@ label.item-content {
 .item-note {
   align-items: center;
   display: flex;
-  flex-direction: column;
   color: $lv-item-note-color;
 
   .#{$lv-icon-font-name} {

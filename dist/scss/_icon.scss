@@ -3,13 +3,23 @@
 
   .item-content {
     padding-left: ($lv-item-padding * 4);
+
+    > .#{$lv-icon-font-name}:first-of-type,
+    > .item-prefix > .#{$lv-icon-font-name}:first-of-type {
+      font-size: 150%;
+    }
+
+    > .item-prefix {
+      margin-right: 0;
+      min-width: 0;
+    }
   }
 
+  .item-content > .item-prefix,
   .item-content > .#{$lv-icon-font-name}:first-of-type {
     position: absolute;
     top: 50%;
     left: $lv-item-padding;
-    font-size: 150%;
     color: $lv-item-icon-color;
     border-radius: 100%;
 

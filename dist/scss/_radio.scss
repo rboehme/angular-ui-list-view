@@ -25,7 +25,7 @@
     }
 
     > .item-note {
-      width: auto;
+      flex: initial;
 
       .#{$lv-icon-font-name} {
         color: $lv-item-radio-active-color;

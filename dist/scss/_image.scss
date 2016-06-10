@@ -1,17 +1,13 @@
 .item-image {
   @include border-image(linear-gradient(left, $lv-item-bg ($lv-item-height-lg + $lv-item-padding), $lv-item-divider-border-color ($lv-item-height-lg + $lv-item-padding), $lv-item-divider-border-color 100%) 1 stretch);
 
-  .item-content {
-    padding-left: ($lv-item-padding * 2);
-  }
-
   img:first-of-type {
     position: relative;
-    left: -$lv-item-padding;
     display: block;
     width: ($lv-item-height-lg - $lv-item-padding);
     height: ($lv-item-height-lg - $lv-item-padding);
     margin-top: 5px;
+    margin-right: $lv-item-padding;
     margin-bottom: 5px;
     background-repeat: no-repeat;
     background-size: ($lv-item-height-lg - $lv-item-padding);
@@ -27,14 +23,9 @@
   &.item-reverse {
     @include border-image(linear-gradient(right, $lv-item-bg ($lv-item-height-lg + $lv-item-padding), $lv-item-divider-border-color ($lv-item-height-lg + $lv-item-padding), $lv-item-divider-border-color 100%) 1 stretch);
 
-    .item-content {
-      padding-right: ($lv-item-padding * 2);
-      padding-left: $lv-item-padding;
-    }
-
     img:first-of-type {
-      right: -$lv-item-padding;
-      left: auto;
+      margin-right: 0;
+      margin-left: $lv-item-padding;
     }
 
     .item-note {

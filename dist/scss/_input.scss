@@ -7,11 +7,6 @@
 
   .item-content {
     @include user-select(none);
-
-    > div,
-    > label {
-      width: 100%;
-    }
   }
 
   .input {

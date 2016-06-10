@@ -27,9 +27,37 @@
 
   .item-content {
     cursor: pointer;
+  }
+}
 
-    > .item-note {
-      flex-direction: row;
+.item {
+  &.active {
+    a.item-content {
+      &:hover,
+      &:focus {
+        & {
+          color: $lv-item-color;
+        }
+
+        .item-note {
+          color: $lv-item-note-color;
+        }
+
+        .#{$lv-icon-font-name} {
+          color: $lv-item-note-icon-color;
+        }
+      }
+    }
+  }
+}
+
+a.item-content {
+  &:hover,
+  &:focus {
+    &,
+    .item-note,
+    .#{$lv-icon-font-name} {
+      color: $lv-item-link-hover-color;
     }
   }
 }
