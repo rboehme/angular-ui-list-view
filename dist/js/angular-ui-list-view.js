@@ -85,8 +85,8 @@ angular.module('ngUIListView', [])
       scope: {
         type: '@',
         value: '=ngModel',
-        name: '@',
         id: '@',
+        name: '@',
         disabled: '=ngDisabled',
         pattern: '@',
         placeholder: '@'
@@ -95,7 +95,7 @@ angular.module('ngUIListView', [])
                   '<label ng-class="{\'has-input\': value, \'has-input-focus\': focus}" class="floating-label">' +
                     '<div>' +
                       '<div ng-if="placeholder" ng-bind="placeholder" class="label"></div>' +
-                      '<input type="{{type ? type : \'text\'}}" ng-model="value" ng-disabled="disabled" ng-pattern="pattern" name="{{name}}" id="{{id}}" class="input">' +
+                      '<input type="{{type ? type : \'text\'}}" ng-model="value" ng-disabled="disabled" ng-pattern="pattern" class="input" id="{{id}}" name="{{name}}">' +
                     '</div>' +
                   '</label>' +
                 '</div>',
@@ -116,8 +116,8 @@ angular.module('ngUIListView', [])
       replace: true,
       scope: {
         value: '=ngModel',
-        name: '@',
         id: '@',
+        name: '@',
         disabled: '=ngDisabled',
         pattern: '@',
         placeholder: '@'
@@ -126,7 +126,7 @@ angular.module('ngUIListView', [])
                   '<label ng-class="{\'has-input\': value, \'has-input-focus\': focus}" class="floating-label">' +
                     '<div>' +
                       '<div ng-if="placeholder" ng-bind="placeholder" class="label"></div>' +
-                      '<textarea ng-model="value" ng-disabled="disabled" ng-pattern="pattern" name="{{name}}" id="{{id}}" class="input"></textarea>' +
+                      '<textarea ng-model="value" ng-disabled="disabled" ng-pattern="pattern" class="input" id="{{id}}" name="{{name}}"></textarea>' +
                     '</div>' +
                   '</label>' +
                 '</div>',
@@ -149,10 +149,11 @@ angular.module('ngUIListView', [])
         label: '@',
         ngModel: '=',
         value: '=',
+        id: '@',
+        name: '@',
         multiple: '=ngMultiple',
         disabled: '=ngDisabled',
-        handle: '@',
-        name: '@'
+        handle: '@'
       },
       template: function ($element, $attrs) {
         var isMultiple = 'ngMultiple' in $attrs;
@@ -164,10 +165,10 @@ angular.module('ngUIListView', [])
                          '</div>';
 
         if (isMultiple) {
-          template += '<input type="checkbox" ng-model="ngModel" ng-value="value" ng-disabled="disabled" name="{{name}}" class="checkbox">';
+          template += '<input type="checkbox" ng-model="ngModel" ng-value="value" ng-disabled="disabled" class="checkbox" id="{{id}}" name="{{name}}">';
         } else {
           template += '<div class="switch">' +
-                        '<input type="checkbox" ng-model="ngModel" ng-value="value" ng-disabled="disabled" name="{{name}}" id="{{handle}}" class="checkbox">' +
+                        '<input type="checkbox" ng-model="ngModel" ng-value="value" ng-disabled="disabled" class="checkbox" id="{{handle}}" name="{{name}}">' +
                         '<label for="{{handle}}"></label>' +
                       '</div>';
         }
@@ -226,13 +227,14 @@ angular.module('ngUIListView', [])
         label: '@',
         ngModel: '=',
         value: '=',
-        disabled: '=ngDisabled',
-        name: '@'
+        id: '@',
+        name: '@',
+        disabled: '=ngDisabled'
       },
       template: '<div>' +
                   '<div ng-if="label" ng-bind="label" class="label"></div>' +
                   '<div ng-transclude></div>' +
-                  '<input type="radio" ng-model="ngModel" ng-value="value" ng-disabled="disabled" ng-checked="ngModel == value" name="{{name}}" class="radio">' +
+                  '<input type="radio" ng-model="ngModel" ng-value="value" ng-disabled="disabled" ng-checked="ngModel == value" class="radio" id="{{id}}" name="{{name}}">' +
                 '</div>',
       link: function ($scope, $element, $attrs, $ctrl) {
         $scope.$watch('disabled', function (value) {
@@ -249,8 +251,8 @@ angular.module('ngUIListView', [])
       replace: true,
       scope: {
         value: '=ngModel',
-        name: '@',
         id: '@',
+        name: '@',
         disabled: '=ngDisabled',
         placeholder: '@',
         options: '='
@@ -258,7 +260,7 @@ angular.module('ngUIListView', [])
       template: '<label ng-class="{\'has-input\': isNumber(value) || value, \'has-input-focus\': focus}" class="floating-label">' +
                   '<div>' +
                     '<div ng-bind="placeholder" class="label"></div>' +
-                    '<input type="number" ng-model="value" ng-disabled="disabled" name="{{name}}" id="{{id}}" class="input" min="{{config.min}}" max="{{config.max}}" step="{{config.stepSize}}">' +
+                    '<input type="number" ng-model="value" ng-disabled="disabled" class="input" id="{{id}}" name="{{name}}" min="{{config.min}}" max="{{config.max}}" step="{{config.stepSize}}">' +
                   '</div>' +
                   '<div class="btn-group stepper">' +
                     '<a ng-click="decrement()" class="btn">' +
