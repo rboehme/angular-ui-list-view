@@ -178,6 +178,12 @@ angular.module('ngUIListView', [])
         return template;
       },
       link: function ($scope, $element, $attrs, $ctrl) {
+        $scope.$watch(function () {
+          return $element.attr('id');
+        }, function () {
+          $element.removeAttr('id');
+        });
+
         $scope.$watch('disabled', function (value) {
           $ctrl.scope.disabled = value;
         });
@@ -237,6 +243,12 @@ angular.module('ngUIListView', [])
                   '<input type="radio" ng-model="ngModel" ng-value="value" ng-disabled="disabled" ng-checked="ngModel == value" class="radio" id="{{id}}" name="{{name}}">' +
                 '</div>',
       link: function ($scope, $element, $attrs, $ctrl) {
+        $scope.$watch(function () {
+          return $element.attr('id');
+        }, function () {
+          $element.removeAttr('id');
+        });
+
         $scope.$watch('disabled', function (value) {
           $ctrl.scope.disabled = value;
         });
