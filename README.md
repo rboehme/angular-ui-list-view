@@ -142,6 +142,8 @@ Add `.list-divider-reverse` for a `.list-divider` with right-aligned content.
 * `type`, specifies the type attribute of an input element, Default is `text`
 * `name`, specifies the name attribute of an input element
 * `id`, specifies the id attribute of an input element
+* `pattern`, specifies a regular expression that the value is checked against
+* `maxLength`, specifies the maximum number of characters allowed in an input element
 * `placeholder`, sets the floating label
 * `ng-disabled`, specifies that an input element should be disabled
 
@@ -158,6 +160,8 @@ Add `.list-divider-reverse` for a `.list-divider` with right-aligned content.
 * `ng-model-options`, specifies what options the data binding must follow
 * `name`, specifies the name attribute of an textarea element
 * `id`, specifies the id attribute of an textarea element
+* `pattern`, specifies a regular expression that the value is checked against
+* `maxLength`, specifies the maximum number of characters allowed in an textarea element
 * `placeholder`, sets the floating label
 * `ng-disabled`, specifies that an textarea element should be disabled
 
@@ -235,6 +239,7 @@ angular.module('myApp', ['ngUIListView'])
 * `ng-model-options`, specifies what options the data binding must follow
 * `ng-multiple`, the array that contains the values for the selected items
 * `name`, specifies the name attribute of a checkbox
+* `id`, specifies the id attribute of a checkbox
 * `value`, specifies which value should be picked as `ng-multiple` array
 * `handle`, specifies which checkbox is bound to
 * `label`, sets a fixed label
@@ -264,6 +269,7 @@ angular.module('myApp', ['ngUIListView'])
 * `ng-model`, the value to bind the radio button to
 * `ng-model-options`, specifies what options the data binding must follow
 * `name`, specifies the name attribute of a radio button
+* `id`, specifies the id attribute of a radio button
 * `value`, sets the returning value
 * `label`, sets a fixed label
 * `ng-disabled`, specifies that a radio button should be disabled

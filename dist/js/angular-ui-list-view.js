@@ -89,13 +89,14 @@ angular.module('ngUIListView', [])
         name: '@',
         disabled: '=ngDisabled',
         pattern: '@',
-        placeholder: '@'
+        placeholder: '@',
+        maxLength: '@'
       },
       template: '<div>' +
                   '<label ng-class="{\'has-input\': value, \'has-input-focus\': focus}" class="floating-label">' +
                     '<div>' +
                       '<div ng-if="placeholder" ng-bind="placeholder" class="label"></div>' +
-                      '<input type="{{type ? type : \'text\'}}" ng-model="value" ng-disabled="disabled" ng-pattern="pattern" class="input" id="{{id}}" name="{{name}}">' +
+                      '<input type="{{type ? type : \'text\'}}" ng-model="value" ng-disabled="disabled" ng-pattern="pattern" class="input" ng-attr-id="{{id}}" ng-attr-name="{{name}}" ng-attr-maxlength="{{maxLength}}">' +
                     '</div>' +
                   '</label>' +
                 '</div>',
@@ -120,13 +121,14 @@ angular.module('ngUIListView', [])
         name: '@',
         disabled: '=ngDisabled',
         pattern: '@',
-        placeholder: '@'
+        placeholder: '@',
+        maxLength: '@'
       },
       template: '<div>' +
                   '<label ng-class="{\'has-input\': value, \'has-input-focus\': focus}" class="floating-label">' +
                     '<div>' +
                       '<div ng-if="placeholder" ng-bind="placeholder" class="label"></div>' +
-                      '<textarea ng-model="value" ng-disabled="disabled" ng-pattern="pattern" class="input" id="{{id}}" name="{{name}}"></textarea>' +
+                      '<textarea ng-model="value" ng-disabled="disabled" ng-pattern="pattern" class="input" ng-attr-id="{{id}}" ng-attr-name="{{name}}" ng-attr-maxlength="{{maxLength}}"></textarea>' +
                     '</div>' +
                   '</label>' +
                 '</div>',
@@ -165,11 +167,11 @@ angular.module('ngUIListView', [])
                          '</div>';
 
         if (isMultiple) {
-          template += '<input type="checkbox" ng-model="ngModel" ng-value="value" ng-disabled="disabled" class="checkbox" id="{{id}}" name="{{name}}">';
+          template += '<input type="checkbox" ng-model="ngModel" ng-value="value" ng-disabled="disabled" class="checkbox" ng-attr-id="{{id}}" ng-attr-name="{{name}}">';
         } else {
           template += '<div class="switch">' +
-                        '<input type="checkbox" ng-model="ngModel" ng-value="value" ng-disabled="disabled" class="checkbox" id="{{handle}}" name="{{name}}">' +
-                        '<label for="{{handle}}"></label>' +
+                        '<input type="checkbox" ng-model="ngModel" ng-value="value" ng-disabled="disabled" class="checkbox" ng-attr-id="{{handle}}" ng-attr-name="{{name}}">' +
+                        '<label ng-attr-for="{{handle}}"></label>' +
                       '</div>';
         }
 
@@ -240,7 +242,7 @@ angular.module('ngUIListView', [])
       template: '<div>' +
                   '<div ng-if="label" ng-bind="label" class="label"></div>' +
                   '<div ng-transclude></div>' +
-                  '<input type="radio" ng-model="ngModel" ng-value="value" ng-disabled="disabled" ng-checked="ngModel == value" class="radio" id="{{id}}" name="{{name}}">' +
+                  '<input type="radio" ng-model="ngModel" ng-value="value" ng-disabled="disabled" ng-checked="ngModel == value" class="radio" ng-attr-id="{{id}}" ng-attr-name="{{name}}">' +
                 '</div>',
       link: function ($scope, $element, $attrs, $ctrl) {
         $scope.$watch(function () {
@@ -272,7 +274,7 @@ angular.module('ngUIListView', [])
       template: '<label ng-class="{\'has-input\': isNumber(value) || value, \'has-input-focus\': focus}" class="floating-label">' +
                   '<div>' +
                     '<div ng-bind="placeholder" class="label"></div>' +
-                    '<input type="number" ng-model="value" ng-disabled="disabled" class="input" id="{{id}}" name="{{name}}" min="{{config.min}}" max="{{config.max}}" step="{{config.stepSize}}">' +
+                    '<input type="number" ng-model="value" ng-disabled="disabled" class="input" ng-attr-id="{{id}}" ng-attr-name="{{name}}" min="{{config.min}}" max="{{config.max}}" step="{{config.stepSize}}">' +
                   '</div>' +
                   '<div class="btn-group stepper">' +
                     '<a ng-click="decrement()" class="btn">' +
