@@ -32,9 +32,8 @@
     text-align: left;
     white-space: nowrap;
     cursor: auto;
-
-    @include transition-duration(.2s);
-    @include transition-timing-function(cubic-bezier(.455, .3, .455, .955));
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(.455, .3, .455, .955);
 
     + .input {
       padding: 18px 0 0;

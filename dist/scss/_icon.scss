@@ -1,5 +1,5 @@
 .item-icon {
-  @include border-image(linear-gradient(left, $lv-item-bg ($lv-item-padding * 4), $lv-item-divider-border-color ($lv-item-padding * 4), $lv-item-divider-border-color 100%) 1 stretch);
+  border-image: linear-gradient(to right, $lv-item-bg ($lv-item-padding * 4), $lv-item-divider-border-color ($lv-item-padding * 4), $lv-item-divider-border-color 100%) 1 stretch;
 
   .item-content {
     padding-left: ($lv-item-padding * 4);
@@ -22,8 +22,7 @@
     left: $lv-item-padding;
     color: $lv-item-icon-color;
     border-radius: 100%;
-
-    @include translate(0, -50%);
+    transform: translate(0px, -50%);
   }
 
   .#{$lv-icon-font-name}:first-of-type + span,
@@ -33,7 +32,7 @@
   }
 
   &.item-reverse {
-    @include border-image(linear-gradient(right, $lv-item-bg ($lv-item-padding * 4), $lv-item-divider-border-color ($lv-item-padding * 4), $lv-item-divider-border-color 100%) 1 stretch);
+    border-image: linear-gradient(to left, $lv-item-bg ($lv-item-padding * 4), $lv-item-divider-border-color ($lv-item-padding * 4), $lv-item-divider-border-color 100%) 1 stretch;
 
     .item-content {
       padding-right: ($lv-item-padding * 4);

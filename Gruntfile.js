@@ -5,16 +5,20 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    compass: {
+    sass: {
       dist: {
         options: {
-          sassDir: 'dist/scss',
-          cssDir: 'dist/css',
-          relativeAssets: true,
-          outputStyle: 'expanded',
-          environment: 'production',
-          importPath: 'bower_components/bootstrap-sass/assets/stylesheets'
-        }
+          loadPath: 'bower_components/bootstrap-sass/assets/stylesheets',
+          sourcemap: 'none',
+          style: 'expanded'
+        },
+        files: [{
+          expand: true,
+          cwd: 'dist/scss/',
+          src: ['*.scss'],
+          dest: 'dist/css/',
+          ext: '.css'
+        }]
       }
     },
     uglify: {
@@ -34,22 +38,40 @@ module.exports = function(grunt) {
     },
     watch: {
       scripts: {
+        files: ['dist/**/*.js'],
+        tasks: ['uglify']
+      },
+      styles: {
+        files: ['dist/**/*.scss'],
+        tasks: ['sass', 'cssmin' ,'postcss']
+      }
+    },
+    postcss: {
+      options: {
+        processors: [
+          require('autoprefixer')({
+            browsers: ['last 3 versions']
+          })
+        ]
+      },
+      dist: {
         files: [
-          'dist/**/*.js',
-          'dist/**/*.scss'
-        ],
-        tasks: ['uglify', 'compass', 'cssmin'],
-        options: {
-          debounceDelay: 100
-        }
+          {
+            expand: true,
+            cwd: 'dist/css/',
+            src: '**/*.css',
+            dest: 'dist/css/'
+          }
+        ]
       }
     }
   });
 
   grunt.registerTask('default', [
     'uglify',
-    'compass',
+    'sass',
     'cssmin',
+    'postcss',
     'watch'
   ]);
 };

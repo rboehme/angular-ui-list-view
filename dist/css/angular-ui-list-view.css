@@ -8,9 +8,15 @@
 }
 
 .list-divider {
-  align-items: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   min-height: 30px;
   padding: 0 10px;
   font-size: 90%;
@@ -19,7 +25,9 @@
   background-color: #efeff4;
 }
 .list-divider.list-divider-reverse {
-  flex-direction: row-reverse;
+  -webkit-flex-direction: row-reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
 }
 .list-divider:not(:empty) {
   padding-top: 20px;
@@ -75,69 +83,27 @@
 }
 
 .item:not(.item-icon) + .item {
-  -moz-border-image: -moz-linear-gradient(left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -moz-border-image: linear-gradient(to right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -o-border-image: linear-gradient(to right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -webkit-border-image: -webkit-linear-gradient(left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -webkit-border-image: linear-gradient(to right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: -moz-linear-gradient(left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: -webkit-linear-gradient(left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: linear-gradient(to right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  border-image: linear-gradient(to right, #fff 10px, #dadade 10px, #dadade 100%) 1 stretch;
 }
 
 .item.item-icon + .item {
-  -moz-border-image: -moz-linear-gradient(left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -moz-border-image: linear-gradient(to right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -o-border-image: linear-gradient(to right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -webkit-border-image: -webkit-linear-gradient(left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -webkit-border-image: linear-gradient(to right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  border-image: -moz-linear-gradient(left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  border-image: -webkit-linear-gradient(left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  border-image: linear-gradient(to right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  border-image: linear-gradient(to right, #fff 40px, #dadade 40px, #dadade 100%) 1 stretch;
 }
 
 .item.item-image + .item {
-  -moz-border-image: -moz-linear-gradient(left, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  -moz-border-image: linear-gradient(to right, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  -o-border-image: linear-gradient(to right, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  -webkit-border-image: -webkit-linear-gradient(left, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  -webkit-border-image: linear-gradient(to right, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  border-image: -moz-linear-gradient(left, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  border-image: -webkit-linear-gradient(left, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  border-image: linear-gradient(to right, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
+  border-image: linear-gradient(to right, #fff 70px, #dadade 70px, #dadade 100%) 1 stretch;
 }
 
 .item-reverse:not(.item-icon) + .item {
-  -moz-border-image: -moz-linear-gradient(right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -moz-border-image: linear-gradient(to left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -o-border-image: linear-gradient(to left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -webkit-border-image: -webkit-linear-gradient(right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -webkit-border-image: linear-gradient(to left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: -moz-linear-gradient(right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: -webkit-linear-gradient(right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: linear-gradient(to left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  border-image: linear-gradient(to left, #fff 10px, #dadade 10px, #dadade 100%) 1 stretch;
 }
 
 .item-reverse.item-icon + .item {
-  -moz-border-image: -moz-linear-gradient(right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -moz-border-image: linear-gradient(to left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -o-border-image: linear-gradient(to left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -webkit-border-image: -webkit-linear-gradient(right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -webkit-border-image: linear-gradient(to left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  border-image: -moz-linear-gradient(right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  border-image: -webkit-linear-gradient(right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  border-image: linear-gradient(to left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  border-image: linear-gradient(to left, #fff 40px, #dadade 40px, #dadade 100%) 1 stretch;
 }
 
 .item-reverse.item-image + .item {
-  -moz-border-image: -moz-linear-gradient(right, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  -moz-border-image: linear-gradient(to left, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  -o-border-image: linear-gradient(to left, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  -webkit-border-image: -webkit-linear-gradient(right, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  -webkit-border-image: linear-gradient(to left, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  border-image: -moz-linear-gradient(right, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  border-image: -webkit-linear-gradient(right, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  border-image: linear-gradient(to left, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
+  border-image: linear-gradient(to left, #fff 70px, #dadade 70px, #dadade 100%) 1 stretch;
 }
 
 .item {
@@ -146,14 +112,7 @@
   border-style: solid;
   border-width: 1px 0 0;
   border-top-color: #dadade;
-  -moz-border-image: -moz-linear-gradient(left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -moz-border-image: linear-gradient(to right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -o-border-image: linear-gradient(to right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -webkit-border-image: -webkit-linear-gradient(left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -webkit-border-image: linear-gradient(to right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: -moz-linear-gradient(left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: -webkit-linear-gradient(left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: linear-gradient(to right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  border-image: linear-gradient(to right, #fff 10px, #dadade 10px, #dadade 100%) 1 stretch;
 }
 .item.active {
   z-index: 1;
@@ -172,21 +131,18 @@
   cursor: not-allowed;
 }
 .item.item-reverse {
-  -moz-border-image: -moz-linear-gradient(right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -moz-border-image: linear-gradient(to left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -o-border-image: linear-gradient(to left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -webkit-border-image: -webkit-linear-gradient(right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -webkit-border-image: linear-gradient(to left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: -moz-linear-gradient(right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: -webkit-linear-gradient(right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: linear-gradient(to left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  border-image: linear-gradient(to left, #fff 10px, #dadade 10px, #dadade 100%) 1 stretch;
 }
 .item.item-reverse .item-content {
-  flex-direction: row-reverse;
+  -webkit-flex-direction: row-reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
   text-align: right;
 }
 .item.item-reverse .floating-label {
-  flex-direction: row-reverse;
+  -webkit-flex-direction: row-reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
 }
 .item.item-reverse .label {
   text-align: right;
@@ -194,7 +150,11 @@
 
 .item-content {
   position: relative;
-  align-items: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   min-height: 40px;
   padding: 0 10px;
@@ -203,9 +163,15 @@
 }
 .item-content > span,
 .item-content > div {
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex: 1;
-  flex-direction: column;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .item-content > span p,
 .item-content > div p {
@@ -216,13 +182,19 @@
   white-space: nowrap;
 }
 .item-content > .item-prefix {
-  flex: initial;
+  -webkit-flex: initial;
+      -ms-flex: initial;
+          flex: initial;
   min-width: 20px;
   margin-right: 10px;
 }
 .item-content .item-note {
-  flex-direction: row;
-  justify-content: flex-end;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 label.item-content {
@@ -243,17 +215,27 @@ label.item-content {
 }
 .item-label.item-label-reverse .item-content > span,
 .item-label.item-label-reverse .item-content > div {
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column-reverse;
+  -webkit-flex-direction: column-reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
 }
 
 .item-note {
-  align-items: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   color: #808080;
 }
 .item-note .glyphicon {
-  align-self: center;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
   color: #c7c7cc;
 }
 .item-note .item-badge {
@@ -363,8 +345,13 @@ a.item-content:focus .glyphicon {
   width: calc(100% - 60px);
 }
 .item-stepper .stepper {
-  align-items: center;
-  flex-direction: row;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+              -ms-grid-row-align: center;
+          align-items: center;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 .item-stepper .stepper > .btn {
   padding: 0 6px;
@@ -373,7 +360,6 @@ a.item-content:focus .glyphicon {
   color: #337ab7;
   background-color: transparent;
   border-color: #2e6da4;
-  -webkit-box-shadow: none;
   box-shadow: none;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -404,21 +390,33 @@ a.item-content:focus .glyphicon {
   user-select: none;
 }
 .item-checkbox .item-content > div:first-of-type {
-  flex-direction: row;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 .item-checkbox .item-content > div:first-of-type > div {
-  align-self: center;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
 }
 .item-checkbox .item-content > div:first-of-type > .switch {
-  align-self: center;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
   width: 44px;
   min-width: 44px;
 }
 .item-checkbox.item-label-reverse .item-content > div > div {
-  flex-direction: column-reverse;
+  -webkit-flex-direction: column-reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
 }
 .item-checkbox .icon-check {
   display: none;
@@ -427,7 +425,9 @@ a.item-content:focus .glyphicon {
   display: none;
 }
 .item-checkbox.item-reverse .item-content > div:first-of-type {
-  flex-direction: row-reverse;
+  -webkit-flex-direction: row-reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
 }
 
 .switch {
@@ -443,7 +443,6 @@ a.item-content:focus .glyphicon {
   background-color: rgba(230, 230, 230, 0.4);
 }
 .switch .checkbox:disabled + label:before {
-  -webkit-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.15);
   box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.15);
 }
 .switch .checkbox:checked + label {
@@ -474,9 +473,7 @@ a.item-content:focus .glyphicon {
   cursor: pointer;
   background-color: #e6e6e6;
   border-radius: 15px;
-  -webkit-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  transition: all .5s ease;
 }
 .switch label:before, .switch label:after {
   content: '';
@@ -485,16 +482,13 @@ a.item-content:focus .glyphicon {
   left: 1px;
   display: block;
   height: 24px;
-  -webkit-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  transition: all .4s ease;
 }
 .switch label:before {
   z-index: 3;
   width: 24px;
   background-color: #fff;
   border-radius: 50%;
-  -webkit-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3);
   box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3);
 }
 .switch label:after {
@@ -505,44 +499,16 @@ a.item-content:focus .glyphicon {
 }
 
 .item-radio.active, .item-radio.active + .item {
-  -moz-border-image: -moz-linear-gradient(left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -moz-border-image: linear-gradient(to right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -o-border-image: linear-gradient(to right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -webkit-border-image: -webkit-linear-gradient(left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -webkit-border-image: linear-gradient(to right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: -moz-linear-gradient(left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: -webkit-linear-gradient(left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: linear-gradient(to right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  border-image: linear-gradient(to right, #fff 10px, #dadade 10px, #dadade 100%) 1 stretch;
 }
 .item-radio.active.item-reverse, .item-radio.active + .item.item-reverse {
-  -moz-border-image: -moz-linear-gradient(right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -moz-border-image: linear-gradient(to left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -o-border-image: linear-gradient(to left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -webkit-border-image: -webkit-linear-gradient(right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  -webkit-border-image: linear-gradient(to left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: -moz-linear-gradient(right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: -webkit-linear-gradient(right, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
-  border-image: linear-gradient(to left, #ffffff 10px, #dadade 10px, #dadade 100%) 1 stretch;
+  border-image: linear-gradient(to left, #fff 10px, #dadade 10px, #dadade 100%) 1 stretch;
 }
 .item-radio.item-icon + .item-icon {
-  -moz-border-image: -moz-linear-gradient(left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -moz-border-image: linear-gradient(to right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -o-border-image: linear-gradient(to right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -webkit-border-image: -webkit-linear-gradient(left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -webkit-border-image: linear-gradient(to right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  border-image: -moz-linear-gradient(left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  border-image: -webkit-linear-gradient(left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  border-image: linear-gradient(to right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  border-image: linear-gradient(to right, #fff 40px, #dadade 40px, #dadade 100%) 1 stretch;
 }
 .item-radio.item-reverse.item-icon + .item-icon {
-  -moz-border-image: -moz-linear-gradient(right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -moz-border-image: linear-gradient(to left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -o-border-image: linear-gradient(to left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -webkit-border-image: -webkit-linear-gradient(right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -webkit-border-image: linear-gradient(to left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  border-image: -moz-linear-gradient(right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  border-image: -webkit-linear-gradient(right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  border-image: linear-gradient(to left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  border-image: linear-gradient(to left, #fff 40px, #dadade 40px, #dadade 100%) 1 stretch;
 }
 .item-radio .item-content {
   -webkit-user-select: none;
@@ -555,7 +521,9 @@ a.item-content:focus .glyphicon {
   width: 100%;
 }
 .item-radio .item-content > .item-note {
-  flex: initial;
+  -webkit-flex: initial;
+      -ms-flex: initial;
+          flex: initial;
 }
 .item-radio .item-content > .item-note .glyphicon {
   color: #337ab7;
@@ -566,6 +534,8 @@ a.item-content:focus .glyphicon {
 
 .floating-label {
   position: relative;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
   min-height: 40px;
@@ -573,11 +543,17 @@ a.item-content:focus .glyphicon {
   font-weight: normal;
 }
 .floating-label > div {
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
 }
 .floating-label > div:first-of-type {
-  align-self: center;
-  flex-direction: column;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
 }
 .floating-label .label {
@@ -596,9 +572,7 @@ a.item-content:focus .glyphicon {
   text-align: left;
   white-space: nowrap;
   cursor: auto;
-  -webkit-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  -webkit-transition-timing-function: cubic-bezier(0.455, 0.3, 0.455, 0.955);
+  transition-duration: .2s;
   transition-timing-function: cubic-bezier(0.455, 0.3, 0.455, 0.955);
 }
 .floating-label .label + .input {
@@ -622,14 +596,7 @@ a.item-content:focus .glyphicon {
 }
 
 .item-icon {
-  -moz-border-image: -moz-linear-gradient(left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -moz-border-image: linear-gradient(to right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -o-border-image: linear-gradient(to right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -webkit-border-image: -webkit-linear-gradient(left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -webkit-border-image: linear-gradient(to right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  border-image: -moz-linear-gradient(left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  border-image: -webkit-linear-gradient(left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  border-image: linear-gradient(to right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  border-image: linear-gradient(to right, #fff 40px, #dadade 40px, #dadade 100%) 1 stretch;
 }
 .item-icon .item-content {
   padding-left: 40px;
@@ -649,10 +616,9 @@ a.item-content:focus .glyphicon {
   left: 10px;
   color: #337ab7;
   border-radius: 100%;
-  -webkit-transform: translate(0, -50%);
-  -ms-transform: translate(0, -50%);
-  -o-transform: translate(0, -50%);
-  transform: translate(0, -50%);
+  -webkit-transform: translate(0px, -50%);
+      -ms-transform: translate(0px, -50%);
+          transform: translate(0px, -50%);
 }
 .item-icon .glyphicon:first-of-type + span,
 .item-icon .glyphicon:first-of-type + label,
@@ -660,14 +626,7 @@ a.item-content:focus .glyphicon {
   position: relative;
 }
 .item-icon.item-reverse {
-  -moz-border-image: -moz-linear-gradient(right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -moz-border-image: linear-gradient(to left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -o-border-image: linear-gradient(to left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -webkit-border-image: -webkit-linear-gradient(right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  -webkit-border-image: linear-gradient(to left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  border-image: -moz-linear-gradient(right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  border-image: -webkit-linear-gradient(right, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
-  border-image: linear-gradient(to left, #ffffff 40px, #dadade 40px, #dadade 100%) 1 stretch;
+  border-image: linear-gradient(to left, #fff 40px, #dadade 40px, #dadade 100%) 1 stretch;
 }
 .item-icon.item-reverse .item-content {
   padding-right: 40px;
@@ -679,14 +638,7 @@ a.item-content:focus .glyphicon {
 }
 
 .item-image {
-  -moz-border-image: -moz-linear-gradient(left, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  -moz-border-image: linear-gradient(to right, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  -o-border-image: linear-gradient(to right, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  -webkit-border-image: -webkit-linear-gradient(left, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  -webkit-border-image: linear-gradient(to right, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  border-image: -moz-linear-gradient(left, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  border-image: -webkit-linear-gradient(left, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  border-image: linear-gradient(to right, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
+  border-image: linear-gradient(to right, #fff 70px, #dadade 70px, #dadade 100%) 1 stretch;
 }
 .item-image img:first-of-type {
   position: relative;
@@ -701,22 +653,19 @@ a.item-content:focus .glyphicon {
   border-radius: 100%;
 }
 .item-image .item-note .glyphicon {
-  align-self: flex-end;
+  -webkit-align-self: flex-end;
+      -ms-flex-item-align: end;
+          align-self: flex-end;
 }
 .item-image.item-reverse {
-  -moz-border-image: -moz-linear-gradient(right, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  -moz-border-image: linear-gradient(to left, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  -o-border-image: linear-gradient(to left, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  -webkit-border-image: -webkit-linear-gradient(right, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  -webkit-border-image: linear-gradient(to left, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  border-image: -moz-linear-gradient(right, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  border-image: -webkit-linear-gradient(right, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
-  border-image: linear-gradient(to left, #ffffff 70px, #dadade 70px, #dadade 100%) 1 stretch;
+  border-image: linear-gradient(to left, #fff 70px, #dadade 70px, #dadade 100%) 1 stretch;
 }
 .item-image.item-reverse img:first-of-type {
   margin-right: 0;
   margin-left: 10px;
 }
 .item-image.item-reverse .item-note .glyphicon {
-  align-self: flex-start;
+  -webkit-align-self: flex-start;
+      -ms-flex-item-align: start;
+          align-self: flex-start;
 }

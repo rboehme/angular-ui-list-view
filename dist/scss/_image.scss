@@ -1,5 +1,5 @@
 .item-image {
-  @include border-image(linear-gradient(left, $lv-item-bg ($lv-item-height-lg + $lv-item-padding), $lv-item-divider-border-color ($lv-item-height-lg + $lv-item-padding), $lv-item-divider-border-color 100%) 1 stretch);
+  border-image: linear-gradient(to right, $lv-item-bg ($lv-item-height-lg + $lv-item-padding), $lv-item-divider-border-color ($lv-item-height-lg + $lv-item-padding), $lv-item-divider-border-color 100%) 1 stretch;
 
   img:first-of-type {
     position: relative;
@@ -21,7 +21,7 @@
   }
 
   &.item-reverse {
-    @include border-image(linear-gradient(right, $lv-item-bg ($lv-item-height-lg + $lv-item-padding), $lv-item-divider-border-color ($lv-item-height-lg + $lv-item-padding), $lv-item-divider-border-color 100%) 1 stretch);
+    border-image: linear-gradient(to left, $lv-item-bg ($lv-item-height-lg + $lv-item-padding), $lv-item-divider-border-color ($lv-item-height-lg + $lv-item-padding), $lv-item-divider-border-color 100%) 1 stretch;
 
     img:first-of-type {
       margin-right: 0;

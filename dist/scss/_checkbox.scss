@@ -64,7 +64,7 @@
       background-color: rgba($lv-switch-border-color, .4);
 
       &:before {
-        @include box-shadow(1px 1px 3px 0 rgba(0, 0, 0, .15));
+        box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, .15);
       }
     }
 
@@ -104,8 +104,7 @@
     cursor: pointer;
     background-color: $lv-switch-border-color;
     border-radius: 15px;
-
-    @include transition(all .5s ease);
+    transition: all .5s ease;
 
     &:before,
     &:after {
@@ -115,8 +114,7 @@
       left: 1px;
       display: block;
       height: 24px;
-
-      @include transition(all .4s ease);
+      transition: all .4s ease;
     }
 
     &:before {
@@ -124,8 +122,7 @@
       width: 24px;
       background-color: $lv-switch-handle-bg;
       border-radius: 50%;
-
-      @include box-shadow(1px 1px 3px 0 rgba(0, 0, 0, .3));
+      box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, .3);
     }
 
     &:after {

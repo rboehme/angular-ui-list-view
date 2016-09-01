@@ -16,8 +16,8 @@
       color: $brand-primary;
       background-color: transparent;
       border-color: $btn-primary-border;
+      box-shadow: none;
 
-      @include box-shadow(none);
       @include text-overflow();
 
       &:hover,

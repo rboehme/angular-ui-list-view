@@ -10,27 +10,27 @@
 }
 
 .item:not(.item-icon) + .item {
-  @include border-image(linear-gradient(left, $lv-item-bg $lv-item-padding, $lv-item-divider-border-color $lv-item-padding, $lv-item-divider-border-color 100%) 1 stretch);
+  border-image: linear-gradient(to right, $lv-item-bg $lv-item-padding, $lv-item-divider-border-color $lv-item-padding, $lv-item-divider-border-color 100%) 1 stretch;
 }
 
 .item.item-icon + .item {
-  @include border-image(linear-gradient(left, $lv-item-bg ($lv-item-padding * 4), $lv-item-divider-border-color ($lv-item-padding * 4), $lv-item-divider-border-color 100%) 1 stretch);
+  border-image: linear-gradient(to right, $lv-item-bg ($lv-item-padding * 4), $lv-item-divider-border-color ($lv-item-padding * 4), $lv-item-divider-border-color 100%) 1 stretch;
 }
 
 .item.item-image + .item {
-  @include border-image(linear-gradient(left, $lv-item-bg ($lv-item-height-lg + $lv-item-padding), $lv-item-divider-border-color ($lv-item-height-lg + $lv-item-padding), $lv-item-divider-border-color 100%) 1 stretch);
+  border-image: linear-gradient(to right, $lv-item-bg ($lv-item-height-lg + $lv-item-padding), $lv-item-divider-border-color ($lv-item-height-lg + $lv-item-padding), $lv-item-divider-border-color 100%) 1 stretch;
 }
 
 .item-reverse:not(.item-icon) + .item {
-  @include border-image(linear-gradient(right, $lv-item-bg $lv-item-padding, $lv-item-divider-border-color $lv-item-padding, $lv-item-divider-border-color 100%) 1 stretch);
+  border-image: linear-gradient(to left, $lv-item-bg $lv-item-padding, $lv-item-divider-border-color $lv-item-padding, $lv-item-divider-border-color 100%) 1 stretch;
 }
 
 .item-reverse.item-icon + .item {
-  @include border-image(linear-gradient(right, $lv-item-bg ($lv-item-padding * 4), $lv-item-divider-border-color ($lv-item-padding * 4), $lv-item-divider-border-color 100%) 1 stretch);
+  border-image: linear-gradient(to left, $lv-item-bg ($lv-item-padding * 4), $lv-item-divider-border-color ($lv-item-padding * 4), $lv-item-divider-border-color 100%) 1 stretch;
 }
 
 .item-reverse.item-image + .item {
-  @include border-image(linear-gradient(right, $lv-item-bg ($lv-item-height-lg + $lv-item-padding), $lv-item-divider-border-color ($lv-item-height-lg + $lv-item-padding), $lv-item-divider-border-color 100%) 1 stretch);
+  border-image: linear-gradient(to left, $lv-item-bg ($lv-item-height-lg + $lv-item-padding), $lv-item-divider-border-color ($lv-item-height-lg + $lv-item-padding), $lv-item-divider-border-color 100%) 1 stretch;
 }
 
 .item {
@@ -40,7 +40,7 @@
   border-width: 1px 0 0;
   border-top-color: $lv-item-divider-border-color;
 
-  @include border-image(linear-gradient(left, $lv-item-bg $lv-item-padding, $lv-item-divider-border-color $lv-item-padding, $lv-item-divider-border-color 100%) 1 stretch);
+  border-image: linear-gradient(to right, $lv-item-bg $lv-item-padding, $lv-item-divider-border-color $lv-item-padding, $lv-item-divider-border-color 100%) 1 stretch;
 
   &.active {
     z-index: 1;
@@ -65,7 +65,7 @@
   }
 
   &.item-reverse {
-    @include border-image(linear-gradient(right, $lv-item-bg $lv-item-padding, $lv-item-divider-border-color $lv-item-padding, $lv-item-divider-border-color 100%) 1 stretch);
+    border-image: linear-gradient(to left, $lv-item-bg $lv-item-padding, $lv-item-divider-border-color $lv-item-padding, $lv-item-divider-border-color 100%) 1 stretch;
 
     .item-content {
       flex-direction: row-reverse;
